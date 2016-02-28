@@ -24,7 +24,7 @@ public class VendingMachineItemTest {
 	 */
 	@Before
 	public void setUp() throws Exception {
-		
+		vendingMachineItem = new VendingMachineItem("Coca-cola", 1.50);
 	}
 
 	/**
@@ -39,8 +39,7 @@ public class VendingMachineItemTest {
 	 */
 	@Test
 	public final void testVendingMachineItem() {
-		vendingMachineItem = new VendingMachineItem("Coca-cola", 1.50);
-		assertNotNull("Successfully constructed vending machine item", vendingMachineItem);
+		assertNotNull("Unsuccessfully constructed vending machine item", vendingMachineItem);
 	}
 
 	/**
@@ -48,7 +47,7 @@ public class VendingMachineItemTest {
 	 */
 	@Test
 	public final void testGetName() {
-		fail("Not yet implemented"); // TODO
+		assertTrue("Returned incorrect item name.", "Coca-cola".equals(vendingMachineItem.getName()));
 	}
 
 	/**
@@ -56,7 +55,7 @@ public class VendingMachineItemTest {
 	 */
 	@Test
 	public final void testGetPrice() {
-		fail("Not yet implemented"); // TODO
+		assertEquals("Returned incorrect item price", 1.50, vendingMachineItem.getPrice(), 0.01);
 	}
 
 }
