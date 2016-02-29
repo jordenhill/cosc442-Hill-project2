@@ -1,0 +1,4 @@
+Potential Bug #1: The make purchase function should throw a VendingMachineException in case the item code is incorrect.
+Potential Bug #2: getBalance() should ensure that the balance is 0 or higher, otherwise throw a VendingMachineException.
+Potential Bug #3: makePurchase() should ensure that the balance is 0 or higher, otherwise throw a VendingMachineException.
+Potential Bug #4: returnchange() should ensure that the balance is 0 or higher, otherwise throw a VendingMachineException.

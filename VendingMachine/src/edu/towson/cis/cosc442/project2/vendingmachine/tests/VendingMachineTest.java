@@ -169,6 +169,15 @@ public class VendingMachineTest {
 	}
 	
 	/**
+	 * Test to see if an item cannot be purchased with an incorrect code.
+	 */
+	@Test (expected = VendingMachineException.class)
+	public final void testMakePurchaseWrongCode() {
+		vendingMachine.addItem(item1, "A");
+		vendingMachine.makePurchase("E");
+	}
+	
+	/**
 	 * Test to see if a purchase can be made from an unassigned slot but a "sufficient" balance.
 	 */
 	@Test

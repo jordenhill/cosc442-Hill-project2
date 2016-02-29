@@ -170,8 +170,9 @@ public class VendingMachine {
 	 * @param code The code for the item from the vending machine
 	 * @return Returns true if there is enough money to make the purchase.  Returns false if not enough money is put
 	 * into the vending machine to make the purchase.  Also returns false if the code is for an empty slot.
+	 * @throws VendingMachineException If the item code is invalid.
 	 */
-	public boolean makePurchase(String code) {
+	public boolean makePurchase(String code) throws VendingMachineException {
 		boolean returnCode = false;
 		VendingMachineItem item = getItem(code);
 		if(( item != null ) && ( this.balance >= item.getPrice() )) {
