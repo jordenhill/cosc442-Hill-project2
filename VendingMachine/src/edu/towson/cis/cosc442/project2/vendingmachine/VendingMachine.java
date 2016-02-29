@@ -98,7 +98,7 @@ public class VendingMachine {
 	 * 1. If you add an item to a slot that is already occupied. 
 	 * 2. If you add an item with an invalid code
 	 */
-	public void addItem(VendingMachineItem item, String code)
+	public boolean addItem(VendingMachineItem item, String code)
 			throws VendingMachineException {
 		int slotIndex = getSlotIndex(code);
 		if (itemArray[slotIndex] != null) {
@@ -106,6 +106,7 @@ public class VendingMachine {
 					+ ALREADY_OCCUPIED_MESSAGE);
 		} else {
 			itemArray[slotIndex] = item;
+			return true;
 		}
 	}
 
@@ -144,10 +145,11 @@ public class VendingMachine {
 	 * @param amount The amount of money to put in the vending machine
 	 * @throws VendingMachineException Throws a VendingMachineException if the amount is < 0 
 	 */
-	public void insertMoney(double amount) throws VendingMachineException {
+	public boolean insertMoney(double amount) throws VendingMachineException {
 		if( amount < 0 )
 			throw new VendingMachineException(VendingMachine.INVALID_AMOUNT_MESSAGE);
 		this.balance += amount;
+		return true;
 	}
 
 	/**
